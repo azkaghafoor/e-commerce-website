@@ -1,150 +1,267 @@
 /* MY NAVBAR CSS START HERE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* --- Desktop & Base Styles --- */
 .navbar {
-  width: 100%;
+  border-bottom: 0.5px solid #b3b3b3;
+  padding: 20px 0;
   background-color: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-container {
-  max-width: 1200px;
+  max-width: 1170px;
   margin: 0 auto;
-  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 20px;
 }
 
-/* Logo */
 .logo {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: #000;
 }
 
-/* Nav Links */
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 32px;
+  list-style: none;
+  gap: 40px;
 }
 
 .nav-links a {
   text-decoration: none;
-  font-size: 14px;
   color: #000;
-  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+  transition: 0.3s;
 }
 
-.nav-links a.active::after {
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background-color: #000;
-  bottom: -4px;
-  left: 0;
+.nav-links a.active {
+  border-bottom: 2px solid #000;
 }
 
-/* Right section */
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 20px;
 }
 
-/* Search box */
 .search-box {
+  background: #f5f5f5;
+  padding: 7px 12px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
-  background-color: #f5f5f5;
-  padding: 6px 10px;
-  border-radius: 4px;
+  gap: 10px;
 }
 
 .search-box input {
+  background: transparent;
   border: none;
   outline: none;
-  background: transparent;
-  font-size: 12px;
-  width: 160px;
+  font-size: 13px;
+  width: 180px;
 }
 
-.search-icon {
-  font-size: 14px;
-  margin-left: 6px;
-  cursor: pointer;
+.icons-group {
+  display: flex;
+  gap: 15px;
 }
 
-/* Icons */
 .icon {
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
+}
+
+.hamburger {
+  display: none; /* Desktop pe chhupa rahe hain */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* --- TABLET VIEW (992px and below) --- */
+@media screen and (max-width: 992px) {
+  .nav-links {
+    gap: 20px;
+  }
+  .search-box input {
+    width: 120px;
+  }
+}
+
+/* --- MOBILE VIEW (768px and below) --- */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block; /* Mobile pe dikhega */
+  }
+
+  /* Menu Navigation styling for mobile */
+  .nav-links {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 75px);
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    gap: 30px;
+    transform: translateX(-100%); /* Default hide */
+    transition: transform 0.4s ease-in-out;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .nav-links.nav-active {
+    transform: translateX(0); /* Menu slide in */
+  }
+
+  .search-box {
+    display: none; /* Mobile space ke liye search bar menu ke bahar hide kiya */
+  }
+}
+
+/* --- SMALL MOBILE (480px and below) --- */
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+  .nav-actions {
+    gap: 10px;
+  }
 }
 
 /* ....Hero Section Starts Here ........ */
+/* --- Desktop Base Styles --- */
 .hero {
-  max-width: 1200px;
-  margin: 30px auto;
+  background-color: #000;
+  color: #fff;
+  margin: 40px auto;
+  max-width: 1170px;
+  width: 95%; /* Responsive margin for large screens */
+  overflow: hidden;
 }
 
-.hero-slide {
-  background-color: black;
-  border-radius: 4px;
-}
-
-.hero-content {
-  padding: 60px;
+.hero-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  color: white;
+  justify-content: space-between;
+  padding: 40px 60px;
+  min-height: 400px;
 }
 
-/* LEFT */
 .hero-text {
-  max-width: 50%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .hero-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
+  gap: 15px;
+  font-size: 16px;
 }
 
 .hero-brand i {
-  font-size: 24px;
+  font-size: 30px;
 }
 
 .hero-text h1 {
   font-size: 48px;
-  margin: 20px 0;
+  font-weight: 600;
   line-height: 1.2;
+  letter-spacing: 2px;
 }
 
 .hero-btn {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  border-bottom: 1px solid white;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid #fff;
+  width: fit-content;
+  padding-bottom: 4px;
+  transition: 0.3s;
 }
 
-/* RIGHT */
+.hero-btn:hover {
+  opacity: 0.7;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .hero-image img {
-  width: 320px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-/* Slick dots */
+/* Slick Dots Styling */
 .slick-dots li button:before {
-  color: gray;
+  color: #808080 !important;
+  opacity: 1 !important;
 }
 
 .slick-dots li.slick-active button:before {
-  color: red;
+  color: #db4444 !important; /* Exclusive Red theme */
 }
 
-/* .... MY FlashSales Css Starts Here */
+/* --- LAPTOP & TABLET (1024px to 769px) --- */
+@media screen and (max-width: 1024px) {
+  .hero-container {
+    padding: 30px 40px;
+  }
+  .hero-text h1 {
+    font-size: 38px;
+  }
+  .hero-image img {
+    max-height: 300px;
+  }
+}
+
+/* --- MOBILE VIEW (768px and below) --- */
+@media screen and (max-width: 768px) {
+  .hero-container {
+    flex-direction: column; /* Content stack ho jayega */
+    text-align: center;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-image img {
+    max-height: 250px;
+  }
+}
+
+/* --- SMALL MOBILE (480px) --- */
+@media screen and (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 26px;
+  }
+  .hero-brand {
+    font-size: 14px;
+  }
+  .hero-image img {
+    max-height: 200px;
+  }
+  .hero-container {
+    padding: 30px 15px;
+  }
+}

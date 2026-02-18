@@ -1,0 +1,78 @@
+.music-banner {
+  padding: 60px;
+  background: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.banner-content {
+  background: linear-gradient(90deg, #000 40%, #2b2b2b 100%);
+  border-radius: 4px;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT SIDE */
+.banner-left {
+  color: #fff;
+  max-width: 45%;
+}
+
+.category-text {
+  color: #00ff66;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.banner-left h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 20px 0 30px;
+}
+
+/* TIMER */
+.time-boxes {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.time-circle {
+  width: 72px;
+  height: 72px;
+  background: #fff;
+  border-radius: 50%;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-circle strong {
+  font-size: 18px;
+}
+
+.time-circle span {
+  font-size: 11px;
+}
+
+/* BUTTON */
+.buy-btn {
+  background: #00ff66;
+  color: #000;
+  border: none;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* RIGHT SIDE */
+.banner-right img {
+  max-width: 520px;
+  display: block;
+}

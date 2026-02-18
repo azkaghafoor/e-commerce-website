@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+
 const HeroSection = () => {
   const settings = {
     dots: true,
@@ -9,56 +10,52 @@ const HeroSection = () => {
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
+    appendDots: (dots) => (
+      <div style={{ bottom: "20px" }}>
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
   };
 
   return (
     <section className="hero">
       <Slider {...settings}>
-        {/* SLIDE 1 */}
+        {/* Slide 1 */}
         <div className="hero-slide">
-          <div className="hero-content">
-            {/* LEFT TEXT */}
+          <div className="hero-container">
             <div className="hero-text">
-              <span className="hero-brand">
+              <div className="hero-brand">
                 <i className="fa-brands fa-apple"></i>
-                iPhone 14 Series
-              </span>
-
+                <span>iPhone 14 Series</span>
+              </div>
               <h1>
                 Up to 10% <br /> off Voucher
               </h1>
-
               <a href="#" className="hero-btn">
-                Shop Now →
+                Shop Now <i className="fa-solid fa-arrow-right"></i>
               </a>
             </div>
-
-            {/* RIGHT IMAGE */}
             <div className="hero-image">
               <img src="/images/iphone.png" alt="iphone" />
             </div>
           </div>
         </div>
-        {/* SLIDE 1 */}
-        <div className="hero-slide">
-          <div className="hero-content">
-            {/* LEFT TEXT */}
-            <div className="hero-text">
-              <span className="hero-brand">
-                <i className="fa-brands fa-apple"></i>
-                iPhone 14 Series
-              </span>
 
+        {/* Slide 2 (Duplicate for demo) */}
+        <div className="hero-slide">
+          <div className="hero-container">
+            <div className="hero-text">
+              <div className="hero-brand">
+                <i className="fa-brands fa-apple"></i>
+                <span>iPhone 14 Series</span>
+              </div>
               <h1>
                 Up to 10% <br /> off Voucher
               </h1>
-
               <a href="#" className="hero-btn">
-                Shop Now →
+                Shop Now <i className="fa-solid fa-arrow-right"></i>
               </a>
             </div>
-
-            {/* RIGHT IMAGE */}
             <div className="hero-image">
               <img src="/images/iphone.png" alt="iphone" />
             </div>
